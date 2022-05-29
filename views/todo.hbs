@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/selfpage.css">
+    <link rel="stylesheet" href="/todo.css">
+</head>
+<body>
+    <script src="timerStart.js"></script>
+    
+    {{ header }}
+
+    <main id="#main">
+        {{> header}}
+        <div class="withInset">
+            <div id="todo">
+                <h1>ToDo<i id="pensil" class="fas fa-pencil-alt"></i></h1>
+                <input type="text" placeholder="Добавить список", id="textInput">
+                <ul class="todos">
+                    {{#each lists}}
+                        <li><span class="todo-text">{{this.title}}</span><span class="todo-trash"><i class="fas fa-trash-alt"></i></span></li>
+                    {{/each}}
+                </ul>
+                <div id="buttons">
+                    <button class="save" id="save" onclick="location.href='@Url.Action("addListItem", "todo", new { id: 1, title: name })'">Сохранить</button>
+                    <button class="clear" id="clear">Очистить</button>
+                </div>
+            </div>
+            <div id = "overlay">
+                <a href="javascript:void(0)" class="closeTips">&times;</a>
+                <ul class="tips">
+                    <li>Чтобы спрятать или показать поле ввода, кликните на карандаш</li>
+                    <li>Для добавления списка дел напишите текст в поле ввода и нажмите Ввод</li>
+                    <li>Чтобы удалить один пункт, наведите на него и нажмите на значок корзины</li>
+                    <li>Чтобы удалить все списки дел, нажмите "Очистить"</li>
+                    <li>Нажмите "Сохранить", чтобы сохранить список дел на потом</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="speedFooter"></div>
+    </footer>
+    <script src="selfpage.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="/public/todo.js"></script>
+</body>
+</html>

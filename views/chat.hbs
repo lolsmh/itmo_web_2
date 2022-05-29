@@ -1,0 +1,31 @@
+ 
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/selfpage.css">
+    <link rel="stylesheet" href="/chat.css">
+</head>
+
+<body>
+    {{> header}}
+
+     <main id="#main">
+        <div class="content">
+             <div>
+                <input id="message" type="text" spellcheck="false", placeholder="Write a fancy message"/>
+                <button onclick="send()">Send</button>
+            </div> 
+
+            <div>
+                <ul id="messages"></ul>
+            </div>
+        </div>
+     </main>
+</body>
+
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+<script src="/chat.js"></script>
+
+</html>
